@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="utf-8">
+        <title>Toxic or Not?</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
+  
+<style>
+
+/* This controls th style of the text area where user provide input */
+textarea {
+            position: absolute;
+            top: 20%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 75px;
+            margin: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        input[id='submit'],
+        select {
+            position: absolute;
+            top: 46%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 2px solid #1da1f2;
+            ;
+            border-radius: 6px;
+            background-color: #1da1f2;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input[id='clear'],
+        select {
+            position: absolute;
+            top: 51%;
+            left: 23%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 1px solid #1da1f2;
+            ;
+            border-radius: 6px;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1da1f2;
+            box-sizing: border-box;
+        }
+               .results {
+                position: absolute;
+                top: 75%;
+                left: 24%;
+
+            }
+            label {
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                left: 25%;
+                top: 60%;
+                font-size: 21px;
+
+            }
+</style>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Toxic Or Not?</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dataset">The Dataset</a></li>
+              <li><a href="/predict">Comment Classifier</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+      <div class="jumbotron">
+          <div class="container">
+            <h2>The Dataset</h2><br>
+            <h4>The data that was used in this project is the Jigsaw Toxic Comments Classification Dataset. The dataset contains 159,571 entries of Wikipedia comments which have been labelled by human raters for the comment’s toxicity.<br>
+              <br>
+              The plot below shows the distribution of each comment on their toxic comment characteristics:
+            </h4><br>
+            <div id="tester" style="width:1130px;height: 500px;"></div>
+            <script>
+            var data = [
+                {
+                  x: ['toxic', 'obscene', 'insult', 'identity hate', 'severe toxic', 'threat'],
+                  y: [21384, 12140, 11304, 2117, 1962, 689],
+                  type: 'bar'
+                }
+              ];
+              var layout = {
+  title: {
+    text:'Distribution Per Type of Comment',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.30,
+  },
+  xaxis: {
+    title: {
+      text: 'Type of Comment',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Occurences',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
+             Plotly.newPlot('tester', data, layout);
+            </script>
+            <br>
+            <p><a class="btn btn-primary btn-lg" href="/predict" role="button">Try it out!</a></p>
+            <br>
+          </div>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="utf-8">
+        <title>Toxic or Not?</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
+  
+<style>
+
+textarea {
+            position: absolute;
+            top: 20%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 75px;
+            margin: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        input[id='submit'],
+        select {
+            position: absolute;
+            top: 46%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 2px solid #1da1f2;
+            ;
+            border-radius: 6px;
+            background-color: #1da1f2;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input[id='clear'],
+        select {
+            position: absolute;
+            top: 51%;
+            left: 23%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 1px solid #1da1f2;
+            ;
+            border-radius: 6px;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1da1f2;
+            box-sizing: border-box;
+        }
+                   .results {
+                position: absolute;
+                top: 75%;
+                left: 24%;
+
+            }
+            label {
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                left: 25%;
+                top: 60%;
+                font-size: 21px;
+
+            }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Toxic Or Not?</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dataset">The Dataset</a></li>
+              <li><a href="/predict">Comment Classifier</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+      <div class="jumbotron">
+          <div class="container">
+            <h1>Is your social media post toxic or not?</h1>
+            <h2>If it is, then what kind of toxic comment is it?</h2><br>
+            <h4>Social media sites have become an avenue for some users to spread hate speech and toxic comments. Others are harassed and become victims of cyberbullying.<br><br>
+      
+              The goal of this project is to use deep learning methods to identify toxicity in online comments, which can be used to filter potentially harmful messages, promote a healthier and safer social media space for everyone especially for the kids, and to help users craft more civil arguments when engaging in an online discussion. This project used deep learning models to classify a certain comments as toxic, severely toxic, identity hate, insult, obscene or threat.<br><br>
+              
+              Use this web application to check and identify the toxic comment characteristics of your social media post!<br><br>
+            </h4><br>
+            <p><a class="btn btn-primary btn-lg" href="/predict" role="button">Try it out!</a></p>
+            <br>
+          </div>
+        </div>
+</body>
+</html>
+

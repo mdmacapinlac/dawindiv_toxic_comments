@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="utf-8">
+        <title>Toxic or Not?</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
+  
+<style>
+
+/* This controls th style of the text area where user provide input */
+textarea {
+            position: absolute;
+            top: 15%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 75px;
+            margin: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        input[id='submit'],
+        select {
+            position: absolute;
+            top: 41%;
+            left: 23%;
+            margin-top: 45%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 2px solid #3b5998;
+            ;
+            border-radius: 6px;
+            background-color: #3b5998;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input[id='clear'],
+        select {
+            position: absolute;
+            top: 46%;
+            left: 23%;
+            width: 50%;
+            line-height: 25px;
+            margin: 15px;
+            border: 1px solid #3b5998;
+            ;
+            border-radius: 6px;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #3b5998;
+            box-sizing: border-box;
+        }
+                   .results {
+                position: absolute;
+                top: 75%;
+                left: 24%;
+
+            }
+            label {
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                left: 25%;
+                top: 55%;
+                font-size: 21px;
+
+            }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Toxic Or Not?</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dataset">The Dataset</a></li>
+              <li><a href="/predict">Comment Classifier</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+<form method="POST">
+  <textarea name="text" placeholder=" What's on your mind?" , wrap='hard' , cols="50"></textarea>
+  <input id='submit' type="submit" value="Post">
+  <input id='clear' type="submit" value="Clear" onclick="clear_content()">
+</form>
+
+<section>
+  <br>
+  <br>
+  <div>
+      <div class='result'>
+          <label for="lbl"><b>COMMENT:</b> <i>{% if text %}{{ text }}{% else %}Please type an English comment in the text box above.{% endif %}</i> <br /></label>
+          <br>
+          <br>
+          <br>
+          <label for="lbl"><br><br><br>
+            <br>Toxic: {{ pred_toxic }} <br />
+            Severely toxic: {{ pred_severe_toxic }} <br />
+            Identity hate: {{ pred_identity_hate }} <br />
+            Insult: {{ pred_insult }} <br />
+            Obscene: {{ pred_obscene }} <br />
+            Threat: {{ pred_threat }} <br />
+          </label>
+      </div>
+</section>
+
+</body>
+</html>
+
